@@ -25,13 +25,18 @@ public class MediappBackendApplicationTests {
 	@Test
 	public void crearUsuario() {
 		Usuario usuarioNuevo = new Usuario();
-		/*usuarioNuevo.setIdUsuario(1);
+		/*usuarioNuevo.setIdUsuario(1);//ADMIN
 		usuarioNuevo.setUsername("carnol1989@hotmail.com");
 		usuarioNuevo.setPassword(bcrypt.encode("123"));
 		usuarioNuevo.setEnabled(true);*/
 		
-		usuarioNuevo.setIdUsuario(2);
+		/*usuarioNuevo.setIdUsuario(2);//USER
 		usuarioNuevo.setUsername("carnole1989@gamil.com");
+		usuarioNuevo.setPassword(bcrypt.encode("123"));
+		usuarioNuevo.setEnabled(true);*/
+		
+		usuarioNuevo.setIdUsuario(3);//DBA
+		usuarioNuevo.setUsername("carnole1989@outlook.com");
 		usuarioNuevo.setPassword(bcrypt.encode("123"));
 		usuarioNuevo.setEnabled(true);
 		
