@@ -85,8 +85,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	
 	@Bean
 	public TokenStore tokenStore() {
-		return new JwtTokenStore(accessTokenConverter());//almacenar el token en memoria
-		//return new JdbcTokenStore(this.dataSource);//almacenar el token en BD
+		//return new JwtTokenStore(accessTokenConverter());//almacenar el token en memoria
+		return new JdbcTokenStore(this.dataSource);//almacenar el token en BD
 	}
 	
 	@Bean
