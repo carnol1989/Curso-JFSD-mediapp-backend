@@ -4,6 +4,8 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import com.mitocode.model.Paciente;
@@ -30,6 +32,11 @@ public class PacienteServiceImpl implements IPacienteService {
 	public List<Paciente> listarService() {
 		return repo.findAll();
 	}
+	
+	@Override
+	public Page<Paciente> listarPageableService(Pageable pageable) {
+		return repo.findAll(pageable);
+	}
 
 	@Override
 	public Paciente leerPorIdService(Integer id) {
@@ -42,5 +49,5 @@ public class PacienteServiceImpl implements IPacienteService {
 		repo.deleteById(id);
 		return true;
 	}
-	
+		
 }

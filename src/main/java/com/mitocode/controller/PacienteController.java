@@ -6,6 +6,8 @@ import java.util.List;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.hateoas.Resource;
 import org.springframework.hateoas.mvc.ControllerLinkBuilder;
 import org.springframework.http.HttpStatus;
@@ -47,6 +49,12 @@ public class PacienteController {
 			throw new ModeloNotFoundException("ID no encontrado " + id);
 		}
 		return new ResponseEntity<Paciente>(obj, HttpStatus.OK);
+	}
+	
+	@GetMapping("/pageable")
+	public ResponseEntity<Page<Paciente>> listarPageableController(Pageable pageable){
+		Page<Paciente> pacientes = service.listarPageableService(pageable);
+		return new ResponseEntity<Page<Paciente>>(pacientes, HttpStatus.OK);
 	}
 	
 	//Nivel 3

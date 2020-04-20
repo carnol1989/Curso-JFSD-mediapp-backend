@@ -38,7 +38,7 @@ public class Paciente {
 	
 	@ApiModelProperty(notes = "Direccion debe tener minimo 3 caracteres")
 	@Size(min = 3, max = 150, message = "Direccion debe tener minimo 3 caracteres")
-	@Column(name = "direccion", nullable = false, length = 150)
+	@Column(name = "direccion", nullable = true, length = 150)
 	private String direccion;
 	
 	@ApiModelProperty(notes = "Telefono debe tener 9 caracteres")
