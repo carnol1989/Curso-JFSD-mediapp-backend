@@ -1,10 +1,10 @@
 spring:
    mail:
       default-encoding: UTF-8
-      host: smtp.gmail.com
+      host: SERVER_CORREO
       username: TU_CORREO
       password: TU_CLAVE
-      port: 587
+      port: PUERTO_SERVER_CORREO
       properties:
          mail:
             ssl:
